@@ -14,9 +14,11 @@ app.use(express.json());
 // Import Routes
 const healthRoutes = require("./routes/healthRoutes");
 const careerRoutes = require("./routes/careerRoutes");
+const authRoutes = require("./routes/authRoutes");
 // Routes
 app.use("/", healthRoutes);
 app.use("/api/careers", careerRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
