@@ -6,7 +6,8 @@ const {
     getAllCareers,
     getCareerById,
     addCareer,
-    updateCareer
+    updateCareer,
+    deleteCareer
 
 } = require("../controllers/careerController");
 
@@ -15,5 +16,6 @@ router.get("/", getAllCareers);
 router.get("/:id", getCareerById);
 router.post("/", addCareer);
 router.put("/:id", updateCareer);
+router.delete("/:id", deleteCareer);
 
 module.exports = router;

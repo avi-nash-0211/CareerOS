@@ -54,12 +54,35 @@ const updateCareer = (req, res) => {
     });
 
 };
+const deleteCareer = (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const index = careers.findIndex(career => career.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            message: "Career not found"
+        });
+    }
+
+    const deletedCareer = careers[index];
+
+    careers.splice(index, 1);
+
+    res.json({
+        message: "Career deleted successfully",
+        career: deletedCareer
+    });
+
+};
 
 module.exports = {
     getAllCareers,
     getCareerById,
     addCareer,
-    updateCareer
+    updateCareer,
+    deleteCareer
 
 };
 
