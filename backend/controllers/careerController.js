@@ -17,10 +17,26 @@ const getCareerById = (req, res) => {
 
     res.json(career);
 };
+const addCareer = (req, res) => {
+
+    const newCareer = {
+        id: careers.length + 1,
+        ...req.body
+    };
+
+    careers.push(newCareer);
+
+    res.status(201).json({
+        message: "Career added successfully",
+        career: newCareer
+    });
+};
 
 module.exports = {
     getAllCareers,
-    getCareerById
+    getCareerById,
+    addCareer
+
 };
 
 
