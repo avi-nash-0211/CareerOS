@@ -7,12 +7,13 @@ const {
     getCareerById,
     addCareer,
     updateCareer,
-    deleteCareer
+    deleteCareer,
+    getEligibleCareers
 
 } = require("../controllers/careerController");
 
 router.get("/", getAllCareers);
-
+router.get("/eligible", getEligibleCareers);
 router.get("/:id", getCareerById);
 router.post("/", addCareer);
 router.put("/:id", updateCareer);

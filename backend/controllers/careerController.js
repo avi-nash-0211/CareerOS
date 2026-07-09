@@ -76,13 +76,25 @@ const deleteCareer = (req, res) => {
     });
 
 };
+const getEligibleCareers = (req, res) => {
+
+    const { qualification } = req.query;
+
+    const eligibleCareers = careers.filter(career => {
+        return career.qualification === qualification;
+    });
+
+    res.json(eligibleCareers);
+
+};
 
 module.exports = {
     getAllCareers,
     getCareerById,
     addCareer,
     updateCareer,
-    deleteCareer
+    deleteCareer,
+    getEligibleCareers
 
 };
 
