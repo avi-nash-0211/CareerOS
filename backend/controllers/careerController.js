@@ -31,11 +31,35 @@ const addCareer = (req, res) => {
         career: newCareer
     });
 };
+const updateCareer = (req, res) => {
+
+    const id = Number(req.params.id);
+
+    const index = careers.findIndex(career => career.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({
+            message: "Career not found"
+        });
+    }
+
+    careers[index] = {
+        ...careers[index],
+        ...req.body
+    };
+
+    res.json({
+        message: "Career updated successfully",
+        career: careers[index]
+    });
+
+};
 
 module.exports = {
     getAllCareers,
     getCareerById,
-    addCareer
+    addCareer,
+    updateCareer
 
 };
 
