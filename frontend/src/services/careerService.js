@@ -6,3 +6,7 @@ export const getAllCareers = async () => {
   const response = await axios.get(API_URL);
   return response.data;
 };
+export const getCareerById = async (id) => {
+  const response = await axios.get(`${API_URL}/${id}`);
+  return response.data;
+};
