@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CareerCard from "../components/CareerCard";
-
+import { Link } from "react-router-dom";
 import {
   getAllCareers,
   deleteCareer,
@@ -33,7 +33,12 @@ function AdminDashboard() {
       <h1 className="text-4xl font-bold mb-8">
         Admin Dashboard
       </h1>
-
+      <Link
+    to="/admin/add"
+    className="inline-block bg-green-600 text-white px-5 py-3 rounded mb-8"
+>
+    + Add Career
+</Link>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {careers.map((career) => (

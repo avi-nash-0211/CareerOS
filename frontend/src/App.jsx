@@ -7,7 +7,7 @@ import Careers from "./pages/Careers";
 import CareerDetails from "./pages/CareerDetails";
 import EligibleCareers from "./pages/EligibleCareers";
 import AdminDashboard from "./pages/AdminDashboard";
-
+import AddCareer from "./pages/AddCareer";
 function App() {
   return (
     <>
@@ -21,6 +21,7 @@ function App() {
         <Route path="/careers/:id" element={<CareerDetails />} />
         <Route path="/eligible" element={<EligibleCareers />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/add" element={<AddCareer />} />
       </Routes>
     </>
   );
