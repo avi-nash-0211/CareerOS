@@ -4,6 +4,7 @@ function CareerCard({
   career,
   showDelete = false,
   onDelete,
+  showEdit = false,
 }) {
   return (
     <div className="border rounded-lg shadow p-6 hover:shadow-lg transition">
@@ -32,7 +33,14 @@ function CareerCard({
         >
           View Details
         </Link>
-
+        {showEdit && (
+  <Link
+    to={`/admin/edit/${career.id}`}
+    className="bg-yellow-500 text-white px-4 py-2 rounded"
+  >
+    Edit
+  </Link>
+)}
         {showDelete && (
           <button
             onClick={() => onDelete(career.id)}

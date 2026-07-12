@@ -44,11 +44,12 @@ function AdminDashboard() {
         {careers.map((career) => (
 
           <CareerCard
-            key={career.id}
-            career={career}
-            showDelete={true}
-            onDelete={handleDelete}
-          />
+    key={career.id}
+    career={career}
+    showDelete={true}
+    showEdit={true}
+    onDelete={handleDelete}
+/>
 
         ))}
 
