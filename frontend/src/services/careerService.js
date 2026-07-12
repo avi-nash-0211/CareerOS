@@ -10,3 +10,10 @@ export const getCareerById = async (id) => {
   const response = await axios.get(`${API_URL}/${id}`);
   return response.data;
 };
+export const getEligibleCareers = async (qualification) => {
+  const response = await axios.get(
+    `${API_URL}/eligible?qualification=${qualification}`
+  );
+
+  return response.data;
+};
