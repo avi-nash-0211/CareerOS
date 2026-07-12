@@ -17,3 +17,7 @@ export const getEligibleCareers = async (qualification) => {
 
   return response.data;
 };
+
+export const deleteCareer = async (id) => {
+  await axios.delete(`${API_URL}/${id}`);
+};
